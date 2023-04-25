@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISRO VIDEO CLASSIFIER</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/new1.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <section class="header">
+        <nav>
+            <a href="acroweb1.html"><img src="{{ url_for('static', filename='ISRO_logo.jpeg') }}"></a>
+            <div class="nav-links" id="navlinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="">HOME</a></li>
+                    <li><a href="">ABOUT</a></li>
+                    <li><a href="">DATASET</a></li>
+                    <li><a href="">CONTACT</a></li>
+                </ul>
+            </div>
+
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <div class="text-box">
+            <h1>Indian Space Research Organisation</h1>
+            <p>
+                Indian Space Research Organisation (ISRO), Indian space agency, founded in 1969 to develop an
+                independent Indian space program. Its headquarters are in Bangalore (Bengaluru).<br>ISRO is the national
+                space agency of India for the purpose of all space-based applications like reconnaissance,
+                communications and doing research. It undertakes the design and development of space rockets,
+                satellites, explores upper atmosphere and deep space exploration missions. ISRO also has incubated its
+                technologies in India's private space sector, boosting its growth.
+            </p>
+            <a href="https://en.wikipedia.org/wiki/Indian_Space_Research_Organisation" class="infobtn1">Visit us to know
+                more</a>
+        </div>
+
+    </section>
+
+    <!--------course------->
+
+    <section class="course">
+        <h1>About Our Project</h1>
+        <div class="row">
+            <div class="course-col">
+                <h3>Problem Statement</h3>
+                <p>Video documentaries of various ISRO missions and programs are available. To categorize the all-video
+                    programs, generation & verification of huge amount of metadata generation need to be done. With
+                    current Deep learning methods-based development in field of Computer vision and Natural Language
+                    Processing this task of video metadata generation is now days automated.
+                </p>
+            </div>
+            <div class="course-col">
+                <h3>Objective</h3>
+                <p> Video programs and process for objects, text, speech recognition, Named Entity recognition etc has
+                    been made available by ISRO. This project will classify the videos in different categories like
+                    launch programs, interviews, educational programs, outdoor shots, public shots, traffic etc.
+
+                </p>
+            </div>
+            <div class="course-col">
+                <h3>Technology Used</h3>
+                <p>Python, Machine learning and Deep learning models</p>
+            </div>
+
+        </div>
+    </section>
+    <!-- CAMPUS  -->
+    <section>
+        <div class="campus">
+            <h1>OUR CAMPUS</h1>
+            <p>ISRO Telemetry Tracking and Command Network (ISTRAC) is responsible for providing Space Operation
+                services that include spacecraft control, TTC support services and other related projects and services,
+                for the launch vehicle and low earth orbiting spacecraft and deep space missions of ISRO and other space
+                agencies around the world. Development of RADAR systems for tracking & atmospheric applications and
+                Establishment of Ground Segment Network for Indian Regional Navigation Satellite System of ISRO are the
+                additional responsibilities of ISTRAC.
+                <br>
+                Indian Space Research Organisation (ISRO), over the years, established a comprehensive network of ground
+                stations to provide Telemetry, Tracking and Command (TTC) support to Satellite and Launch vehicle
+                missions. These facilities are grouped under ISRO Telemetry, Tracking And Command Network (ISTRAC) with
+                its headquarters at Bangalore, Karnataka State, INDIA. ISTRAC has TTC ground stations at Bangalore,
+                Lucknow, SHAR (Sriharikota), Thiruvananthapuram, Port Blair Island, Brunei, Biak (Indonesia) and
+                Mauritius, meeting international standards.</p>
+
+            <div class="row">
+                <div class="campus-col">
+                    <img src="{{ url_for('static', filename='IRSO_CAMPUS.jpeg') }}" alt="">
+                    <div class="layer">
+                        <h3>ISRO</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!------Call to Action------->
+    <section class="cta">
+        <h1>ISRO VIDEO CLASSIFIER</h1>
+        <button onclick=" ">
+            <a href="{{ url_for('static', filename='html/new2.html') }}" class="infobtn">CLICK HERE</a>
+        </button>
+    </section>
+
+    <!-------Footer------>
+
+    <section class="footer">
+        <h4>About us</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, temporibus nobis harum, voluptates sed
+            incidunt qui, nulla laudantium sit cum nisi<br>. Nobis non consequuntur aperiam, deleniti est doloribus ab
+            saepe
+            corrupti nemo distinctio, autem explicabo.</p>
+        <div class="icons">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-linkedin"></i>
+        </div>
+        <p>Made with <i class="fa fa-heart-o"></i> Aayush Panchal</p>
+    </section>
+    <!-----Javascript for Toggle Menu------>
+    <script>
+        var navlinks = document.getElementById("navlinks");
+        function showMenu() {
+            navlinks.style.right = "0";
+        }
+        function hideMenu() {
+            navlinks.style.right = "-200px";
+        }
+    </script>
+</body>
+
+</html>

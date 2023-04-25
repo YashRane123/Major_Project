@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acropolis Institute of Technology and Research</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/acroweb1.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+</head>
+
+<body>
+    <section class="header">
+        <nav>
+            <a href="acroweb1.html"><img src="{{ url_for('static', filename='ISRO_logo.jpeg') }}"></a>
+            <div class="nav-links" id="navlinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="">HOME</a></li>
+                    <li><a href="">ABOUT</a></li>
+                    <li><a href="">DATASET</a></li>
+                    <li><a href="">CONTACT</a></li>
+                </ul>
+            </div>
+
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <div class="text-box">
+            <h1>Indian Space Research Organisation</h1>
+            <p>
+                Indian Space Research Organisation (ISRO), Indian space agency, founded in 1969 to develop an
+                independent Indian space program. Its headquarters are in Bangalore (Bengaluru).<br>ISRO is the national
+                space agency of India for the purpose of all space-based applications like reconnaissance,
+                communications and doing research. It undertakes the design and development of space rockets,
+                satellites, explores upper atmosphere and deep space exploration missions. ISRO also has incubated its
+                technologies in India's private space sector, boosting its growth.
+            </p>
+            <a href="" class="infobtn">Visit us to know more</a>
+        </div>
+    </section>
+    
+<div class="video_upload">
+    <h3>For Testing video classifer on different videos, Upload your file below </h3><br>
+    <div class="form">
+        <main>
+            <form>
+              <label for="video-file">Select a video file:</label>
+              <input type="file" id="video-file" name="video-file">
+              <button type="button" onclick="classifyVideo()">Classify Video</button>
+            </form>
+            <div id="result"></div>
+          </main>
+          <script>
+            function classifyVideo() {
+          const videoFile = document.getElementById("video-file").files[0];
+          if (!videoFile) {
+            alert("Please select a video file.");
+            return;
+          }
+          const formData = new FormData();
+          formData.append("video-file", videoFile);
+          fetch("/classify-video", {
+            method: "POST",
+            body: formData
+          })
+          .then(response => response.json())
+          .then(result => {
+            const resultElement = document.getElementById("result");
+            resultElement.innerHTML = `
+              <p>Prediction: ${result.prediction}</p>
+              <p>Probability: ${result.probability}</p>
+            `;
+          })
+          .catch(error => {
+            alert(`An error occurred: ${error}`);
+          });
+        }
+          </script>
+    </div>
+    
+
+</div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acropolis Institute of Technology and Research</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/acroweb1.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+</head>
+
+<body>
+    <section class="header">
+        <nav>
+            <a href="acroweb1.html"><img src="{{ url_for('static, filename='ISRO_logo.jpeg)}}"></a>
+            <div class="nav-links" id="navlinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="">HOME</a></li>
+                    <li><a href="">ABOUT</a></li>
+                    <li><a href="">DATASET</a></li>
+                    <li><a href="">CONTACT</a></li>
+                </ul>
+            </div>
+
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <div class="text-box">
+            <h1>Acropolis Institute of Technology and Research</h1>
+            <p>
+                Making website is now one of the easiest thing in the world .
+                You just need to learn HTML, CSS,<br>Javascript and you are good to go.
+            </p>
+            <a href="" class="infobtn">Visit us to know more</a>
+        </div>
+    </section>
+
+    </div>
+    
+    <!-----Javascript for Toggle Menu------>
+    <script>
+        var navlinks = document.getElementById("navlinks");
+        function showMenu() {
+            navlinks.style.right = "0";
+        }
+        function hideMenu() {
+            navlinks.style.right = "-200px";
+        }
+        function chat(){
+            var x= document.getElementsById("row");
+            if(x.style.display === "none"){
+                x.style.display = "block";
+            }
+            else{
+                x.style.display="none";
+            }
+        }
+    </script>
+
+
+    <!-- <div class="container">
+        <button onclick="chat()">
+            Try it
+        </button>
+
+    </div>
+    <div class="row">
+        <div class="col-md-10 mr-auto ml-auto">
+            <h1>Acrobot</h1>
+            <form>
+                <div id="chatbox">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <p class="botText"><span> Hi! I'm Acrobot,
+                                your Study Buddy.</span></p>
+                    </div>
+                </div>
+                <div id="userInput" class="row">
+                    <div class="col-md-10">
+                        <input id="text" type="text" name="msg" placeholder="Message" class="form-control">
+                        <button type="submit" id="send" class="btn btn-warning">Send</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div> -->
+</body>
+
+</html>
